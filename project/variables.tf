@@ -23,7 +23,7 @@ variable "billing_account" {
 }
 variable "org_id" {
   type    = string
-  default = "173736554255"
+  default = ""
 }
 
 
