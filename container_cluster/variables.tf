@@ -22,8 +22,8 @@ variable "master_authorized_networks_config" {
     {
       cidr_blocks = [
         {
-          display_name = "London Office"
-          cidr_block   = "167.98.129.192/29"
+          display_name = "Home"
+          cidr_block   = "109.249.184.194/32"
         }
       ]
     }
