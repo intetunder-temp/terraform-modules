@@ -6,7 +6,7 @@ resource "google_project" "main" {
   auto_create_network = var.auto_create_network
   labels = merge(
     {
-      "TerraformManaged" = "true"
+      "terraform" = "true"
     },
     var.labels
   )
