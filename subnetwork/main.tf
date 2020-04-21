@@ -1,6 +1,5 @@
 
 resource google_compute_subnetwork subnetwork {
-  provider                 = "google-beta"
   name                     = var.name
   project                  = var.project
   description              = var.description

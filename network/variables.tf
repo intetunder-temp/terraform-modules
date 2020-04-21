@@ -1,5 +1,5 @@
 variable "network_name" {
-  type = "string"
+  type = string
 }
 variable "network_project" {}
 variable "auto_create_subnetworks" {
