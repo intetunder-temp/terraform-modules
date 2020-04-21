@@ -4,18 +4,6 @@ resource "google_service_account" "node_pool_service_account" {
   display_name = var.name
 }
 
-resource "google_storage_bucket_iam_member" "member-eu" {
-  bucket = "eu.artifacts.loveholidays-ci-cd.appspot.com"
-  role   = "roles/storage.objectViewer"
-  member = "serviceAccount:${google_service_account.node_pool_service_account.email}"
-}
-
-resource "google_storage_bucket_iam_member" "member-usa" {
-  bucket = "artifacts.loveholidays-ci-cd.appspot.com"
-  role   = "roles/storage.objectViewer"
-  member = "serviceAccount:${google_service_account.node_pool_service_account.email}"
-}
-
 resource "google_project_iam_member" "project-cloudsql" {
   project = "${random_string.this.keepers.project}"
   role    = "roles/cloudsql.client"
@@ -37,12 +25,6 @@ resource "google_project_iam_member" "project-trace-agent" {
   project = "${random_string.this.keepers.project}"
   role    = "roles/cloudtrace.agent"
   member  = "serviceAccount:${google_service_account.node_pool_service_account.email}"
-}
-
-resource "google_project_iam_member" "k8s-dev-ci-cd" {
-  project = "${random_string.this.keepers.project}"
-  role    = "roles/container.developer"
-  member  = "serviceAccount:39973446187@cloudbuild.gserviceaccount.com"
 }
 
 output "service_account" {
