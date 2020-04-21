@@ -19,7 +19,7 @@ variable "auto_create_network" {
 
 variable "billing_account" {
   type    = string
-  default = "017A87-D72085-E6948F"
+  default = "0191B0-82ED5F-1ABE8F"
 }
 variable "org_id" {
   type    = string
