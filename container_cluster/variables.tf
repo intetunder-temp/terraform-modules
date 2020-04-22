@@ -34,13 +34,13 @@ variable "gke_project" {}
 # Logging service that will be used
 variable "logging_service" {
   description = "Logging service that will be used"
-  default     = "logging.googleapis.com"
+  default     = "logging.googleapis.com/kubernetes"
 }
 
 # Monitoring service that will be used
 variable "monitoring_service" {
   description = "Monitoring service that will be used"
-  default     = "monitoring.googleapis.com"
+  default     = "monitoring.googleapis.com/kubernetes"
 }
 
 # Region where the cluster will be deployed
